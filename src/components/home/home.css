@@ -22,3 +22,9 @@ margin-top: 23rem;
 .home_text {
     color: white;
 }
+.footer {
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    display: flex;
+    background-color: palevioletred;
+}
