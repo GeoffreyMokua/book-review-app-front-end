@@ -1,5 +1,5 @@
 import React from 'react'
-import BookReview from '../bookReview/BookReview'
+import BookReview from '../bookReview/BookCard'
 import Home from '../home/Home'
 import Login from '../login/Login'
 import navbar from '../navbar/navbar.css'
@@ -11,6 +11,8 @@ function Navbar() {
         <Link to="/">Home</Link>
         <Link to="/reviews">BookReview</Link>
         <Link to="/login">Login</Link>
+        <Link to="/add_books">Add book</Link>
+
         </div>
           
   )
