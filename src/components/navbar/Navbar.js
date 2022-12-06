@@ -8,7 +8,7 @@ import { Link } from "react-router-dom"
 function Navbar() {
   return (
       <div>
-        <nav class="navbar navbar-expand-lg bg-light">
+        <nav class="navbar navbar-expand-lg bg-#ffdde1">
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
