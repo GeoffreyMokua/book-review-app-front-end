@@ -11,6 +11,8 @@ function Navbar() {
         <Link to="/">Home</Link>
         <Link to="/reviews">BookReview</Link>
         <Link to="/login">Login</Link>
+        <Link to="/add_books">Add book</Link>
+
         </div>
           
   )
