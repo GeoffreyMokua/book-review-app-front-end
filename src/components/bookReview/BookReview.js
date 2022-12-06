@@ -1,5 +1,5 @@
 import React from 'react'
-import bookreview from'../bookReview/bookReview.css'
+import './BookReview.css'
 
 function BookReview() {
   return (
