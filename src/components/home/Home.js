@@ -12,8 +12,7 @@ const Home = () => {
             {/* Welcome to moviefy */}
           </h1>
           <p>
-            This here, you get to know the latest movies, and after watching them, you can come and create your own personal favourites list by liking a movie 5+ times(similar to giving a movie a 5-star rating).
-            Happy watching and Enjoy moviefy!!
+            Welcome to BookReview.com. We love to learn about the world through books. See a book you like, leave a review. If you don't see a book you like, feel free to upload it and leave a review for future readers! Happy Reading!!
           </p>
         </div>
     </div>

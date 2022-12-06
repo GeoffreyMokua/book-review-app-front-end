@@ -1,5 +1,5 @@
 import React from 'react'
-import BookReview from '../bookReview/BookReview'
+import BookReview from '../bookReview/BookCard'
 import Home from '../home/Home'
 import Login from '../login/Login'
 import navbar from '../navbar/navbar.css'
