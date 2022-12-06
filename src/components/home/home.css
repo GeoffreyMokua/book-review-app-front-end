@@ -1,0 +1,30 @@
+.home {
+    display: flex;
+    justify-content: center;
+}
+.home_text {
+    position: relative;
+    text-align: center;
+    padding: 1rem;
+    background: rgba(59, 55, 55, 0.16);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+max-width: 600px;
+margin-top: 23rem;
+}
+.home > video {
+    width: 100%;
+    position: absolute;
+}
+.home_text {
+    color: white;
+}
+.footer {
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    display: flex;
+    background-color: palevioletred;
+}
