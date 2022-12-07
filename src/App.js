@@ -15,11 +15,12 @@ function App() {
           <BookReview />
         </Route>
 
-        <Route path="/login">
-          <Login/>
-        </Route>
         <Route path="/add_books">
           <AddBook/>
+        </Route>
+
+        <Route path="/login">
+          <Login/>
         </Route>
 
         <Route path="/">
