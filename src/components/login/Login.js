@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
+import react, { useState } from 'react'
 import login from '../login/login.css'
 // function Login(){
 //   // const [ username, setUsername ] = useState('')
@@ -52,8 +53,6 @@ import login from '../login/login.css'
       
 //     </form>
 //   </div>
-    
-
 //     // <form onSubmit={handleLogin}>
 //     //   <label>
 //     //     Username: <input type="text" value={username} onChange={(e) => setUsername(e.target.value)}/>
