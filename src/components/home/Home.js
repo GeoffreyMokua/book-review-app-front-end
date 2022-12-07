@@ -1,4 +1,5 @@
 import React from 'react'
+// import Footer from './Footer'
 import './home.css'
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
             Happy watching and Enjoy moviefy!!
           </p>
         </div>
+        {/* <Footer/> */}
     </div>
   )
 }
