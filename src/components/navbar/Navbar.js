@@ -28,6 +28,11 @@ function Navbar() {
                 </NavLink>
               </li>
               <li class="nav-item">
+                <NavLink className="nav-link" to="/register">
+                  Register
+                </NavLink>
+              </li>
+              <li class="nav-item">
                 <NavLink className="nav-link" to="/add_books">
                   Add book
                 </NavLink>

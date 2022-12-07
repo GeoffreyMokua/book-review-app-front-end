@@ -1,6 +1,5 @@
 import {React, useState} from 'react'
 import {useNavigate} from 'react-router-dom'
-
 import './AddBook.css'
 
 // export default function AddBook() {
@@ -37,7 +36,7 @@ function AddBook() {
     })
   }
   return (
-    <div>
+    <div className='addBook'>
       <p id="form-p">
         This page gives you a platform where you can add a Book to our
         collection.
