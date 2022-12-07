@@ -1,6 +1,10 @@
 body {
     /* background-image: linear-gradient(135deg, #FAB2FF 10%, #1904E5 100%);  */
+<<<<<<< HEAD
+=======
     background-color: #ffdde1;
+>>>>>>> be0f11f342e8c76d95ea665536753636712b7e93
+    background-color: pink(122, 53, 124);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed; 
@@ -17,32 +21,41 @@ body {
     flex: 1 1 100%;
     align-items: stretch;
     justify-content: space-between;
-    box-shadow: 0 0 20px 6px #090b6f85;
+    box-shadow: 0 0 20px 6px #206d4d85;
+    
 } 
 .login-box{
     background-color: sky-blue(41, 134, 127);
     width: 400px;
     padding: 20px;
     border-radius: 5px;
-    border: 1px solid grey;
+    border: 3px solid palevioletred;
     /* margin-left: 38%; */
-    margin-top: 200px;
+    margin-top: 180px;
     position: absolute;
+    margin-right: 500px;
+    margin-left: 350px;
+    
+    
 }
 
 .user-box{
     display: flex;
     margin-top: 20px;
     flex-direction: column;
+    font-size: 20px;
 }
 
 .user-box > label{
     margin-bottom: 5px;
+    
 }
 .submit-box {
     display: flex;
     margin-top: 20px;
-    flex-direction: column; 
+    flex-direction: column;
+    border: 2px solid white; 
+    color: black;
 }
 .parent-container{
     position: relative;
@@ -63,4 +76,15 @@ body {
     height: inherit;
     object-fit: cover;
 
+}
+.link-btn{
+    color: violet;
+    font-size: 23px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+.submit-btn{
+    color: black;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
 }
