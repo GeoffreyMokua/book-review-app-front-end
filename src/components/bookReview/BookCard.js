@@ -3,7 +3,7 @@ import './BookCard.css'
 
 function BookReview() {
   return (
-    <div>BookReview</div>
+    <div>Book</div>
   )
 }
 
