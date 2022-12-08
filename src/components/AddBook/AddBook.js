@@ -6,24 +6,25 @@ import './AddBook.css'
 
 function AddBook() {
   const [title, setTitle] = useState('');
-  const [image, setImage] = useState('');
+  const [author, setAuthor] = useState('');
   const [Description, setDescription] = useState('');
-  const navigate = useNavigate();
+  const autoNavigate = useNavigate();
+
   function handleSubmit(e){
     e.preventDefault();
-    const form = {title,image,Description}
-    fetch('/add_books',{
+    const form = {title,author,Description}
+    fetch('/books',{
       method: 'POST',
       headers:{'Content-Type':'application/json'},
-      body: JSON.stringify(form)
+      body: JSON.stringify(FormData)
     })
     .then((res) => res.json())
     .then(()=>{
       setTitle('')
-      setImage('')
+      setAuthor('')
       setDescription('')
-      navigate('/')
     })
+    autoNavigate("/reviews")
   }
   return (
     <div className='addBook'>
@@ -38,8 +39,8 @@ function AddBook() {
           <input type="text" value={title} onChange={(e)=>setTitle(e.target.value)} required></input>
           <br />
           <br />
-          <label for="image-url">Image url</label> <br />
-          <input type="text" value={image}  onChange={(e)=>setImage(e.target.value)} required></input>
+          <label type="text" >Author</label> <br />
+          <input type="text" value={author}  onChange={(e)=>setAuthor(e.target.value)} required></input>
           <br />
           <br />
           <label for="book-description">Book-Description</label>

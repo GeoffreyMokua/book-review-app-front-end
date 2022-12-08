@@ -25,7 +25,7 @@ function Navbar() {
               </li>
               <li class="nav-item">
                 <NavLink className="nav-link" to="/register">
-                  Register
+                  Sign up
                 </NavLink>
               </li>
               <li class="nav-item">

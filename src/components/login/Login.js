@@ -1,19 +1,19 @@
 
 import React from 'react'
 import { useState } from 'react'       
-// import {useNavigate} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 import './login.css'
 
 function Login({onLogin}) {
-  // const navigate = useNavigate()
+  const autoNavigate = useNavigate()
   const [username, setUsername] = ("")
   const [password, setPassword] = ("")
-  const [errors, setErrors] = useState([]);
+  const [error, setErrors] = useState(null);
 
   // perform side effect for user login
   const handleSubmit = e => {
     e.preventDefault();
-    fetch("/login", {
+    fetch("/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -24,9 +24,10 @@ function Login({onLogin}) {
       if (r.ok) {
         r.json().then((user) => onLogin(user));
       } else {
-        r.json().then((err) => setErrors(err.errors));
+        r.json().then((err) => setErrors(err.error));
       }
-    });
+    })
+    autoNavigate("/reviews")
   }
   
   return (
