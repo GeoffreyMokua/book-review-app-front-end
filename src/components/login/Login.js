@@ -1,7 +1,7 @@
 
-import React from 'react'
-import react, { useState } from 'react'
-import login from '../login/login.css'
+// import React from 'react'
+// import react, { useState } from 'react'
+// import login from '../login/login.css'
        
 import React, { useState } from 'react'
 import {useNavigate} from 'react-router-dom'
@@ -16,7 +16,7 @@ function Login({onLogin}) {
   // perform side effect for user login
   const handleSubmit = e => {
     e.preventDefault();
-    fetch("/login", {
+    fetch("/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
