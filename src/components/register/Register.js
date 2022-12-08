@@ -3,9 +3,6 @@ import { React, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import './register.css'
 
-import { useState } from 'react'
-import './Register.css'
-
 function Register( { onLogin }){
     const [ username, setUsername ] = useState("");
     const [ password, setPassword ] = useState("");
