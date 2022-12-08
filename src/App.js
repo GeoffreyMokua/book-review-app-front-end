@@ -1,28 +1,36 @@
 import Navbar from "./components/navbar/Navbar";
-import { Route , Switch} from 'react-router-dom'
+import { Routes, Route } from "react-router-dom";
 import Home from "./components/home/Home";
-import BookReview from "./components/bookReview/BookReview";
+import BookReview from "./components/bookReview/BookCard";
 import Login from "./components/login/Login";
+import AddBook from "./components/AddBook/AddBook";
+import Register from "./components/register/Register";
 
 function App() {
   return (
    <div>
     <Navbar/>
-    <Switch>
-
-        <Route path="/reviews">
-          <BookReview />
-        </Route>
-
-        <Route path="/login">
-          <Login/>
-        </Route>
-
-        <Route path="/">
-          <Home />
-        </Route>
-
-    </Switch>
+    <Routes>
+        <Route
+          path="/reviews"
+          element={
+            <BookReview />
+          }
+        />
+        <Route
+          path="/add_books"
+          element={<AddBook />}
+        />
+        <Route
+          path="/login"
+          element={<Login />}
+        />
+         <Route
+          path="/register"
+          element={<Register />}
+        />
+        <Route path="/" element={<Home />} />
+      </Routes>
     </div>
   );
 }
