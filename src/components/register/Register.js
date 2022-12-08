@@ -3,10 +3,9 @@ import { React, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import './Register.css'
 
-function Register( { onLogin }){
+function Register( { onRegister }){
     const [ username, setUsername ] = useState("");
     const [ password, setPassword ] = useState("");
-    const navigate = useNavigate()
     const [ errors, setErrors ] = useState([]);
 
     const handleSubmit = e => {
@@ -25,8 +24,8 @@ function Register( { onLogin }){
             r.json().then((err) => setErrors(err.error));
           }
         })
-        navigate("/reviews")
-        }
+      autoNavigate("/reviews")
+  }
 
     return(
         <div className='parent-container' >
@@ -60,9 +59,11 @@ function Register( { onLogin }){
                           })}
                   </div>
               </form>
-          </div>
-            
-    </div>
+          </div>      
+      </div>
     )
   }
+
   export default Register;
+
+

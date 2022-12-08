@@ -6,7 +6,7 @@
        
 // import  { useState } from 'react'
 import React from 'react'
-import { useState } from 'react'       
+// import { useState } from 'react'       
 import {useNavigate} from 'react-router-dom'
 import './login.css'
 
@@ -14,7 +14,7 @@ function Login({onLogin}) {
   const autoNavigate = useNavigate()
   const [username, setUsername] = ("")
   const [password, setPassword] = ("")
-  const [error, setErrors] = useState(null);
+  // const [error, setErrors] = useState(null);
 
   // perform side effect for user login
   const handleSubmit = e => {
@@ -25,14 +25,15 @@ function Login({onLogin}) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ username, password }),
-    }).then((r) => {
-      // setIsLoading(false);
-      if (r.ok) {
-        r.json().then((user) => onLogin(user));
-      } else {
-        r.json().then((err) => setErrors(err.error));
-      }
     })
+    //   .then((r) => {
+    //   // setIsLoading(false);
+    //   if (r.ok) {
+    //     r.json().then((user) => onLogin(user));
+    //   } else {
+    //     r.json().then((err) => setErrors(err.error));
+    //   }
+    // })
     autoNavigate("/reviews")
     }
   

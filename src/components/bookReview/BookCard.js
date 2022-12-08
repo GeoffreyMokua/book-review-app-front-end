@@ -2,7 +2,7 @@ import React from 'react'
 
 function BookCard() {
   return (
-    <div>BookCard</div>
+    <div>Book</div>
   )
 }
 
