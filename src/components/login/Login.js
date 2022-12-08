@@ -1,3 +1,8 @@
+
+// import React from 'react'
+// import react, { useState } from 'react'
+// import login from '../login/login.css'
+       
 import React, { useState } from 'react'
 import {useNavigate} from 'react-router-dom'
 import './login.css'
@@ -31,6 +36,7 @@ function Login({onLogin}) {
     <div className="parent-container">
       <div className="image-background">
         <img src="https://res.cloudinary.com/dnhtposui/image/upload/v1670398469/books_with_coffeemug_sgpbjx.jpg" alt="Background Image" />
+
       </div>
       <div className="login-box">
       <h2>Login</h2>
