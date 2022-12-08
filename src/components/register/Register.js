@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import './Register.css'
+
 
 function Register( { onRegister }){
     const [ username, setUsername ] = useState("");
@@ -24,27 +26,39 @@ function Register( { onRegister }){
   }
 
     return(
-        <div >
+        <div className='parent-container' >
+          <div className='register-box'>
+            <h2>Register</h2>
             <form onSubmit={userRegister} >
-                <input type="text"
-                value={username}
-                onChange={(e) => {
-                    setUsername(e.target.value)
-                    }}
-                    placeholder="Enter your username"/>
-                <input type="password"
-                value={password}
-                onChange={(e) => {
-                    setPassword(e.target.value)
-                    }}
-                    placeholder="Enter Password"/>
-                <button onClick={userRegister} >Register</button>
-                <div hidden={errors.length <= 0 }>
-                    {errors.map((err) => {
-                        return <h4 key={errors.indexOf(err)}>{err}</h4>
-                        })}
-                </div>
-            </form>
+          <div className='user-box'>
+            <label>username</label>
+            <input type="text"
+                    value={username}
+                    onChange={(e) => {
+                        setUsername(e.target.value)
+                        }}
+                        />
+          </div>
+          <div className='user-box'>
+            <label>password</label>
+            <input type="password"
+                    value={password}
+                    onChange={(e) => {
+                        setPassword(e.target.value)
+                        }}
+                        />
+          </div>
+          <div className='submit-box'>
+            <button className='submit-btn' onClick={userRegister} >Register</button>
+          </div> 
+                  <div hidden={errors.length <= 0 }>
+                      {errors.map((err) => {
+                          return <h4 key={errors.indexOf(err)}>{err}</h4>
+                          })}
+                  </div>
+              </form>
+          </div>
+            
     </div>
     )
   }
