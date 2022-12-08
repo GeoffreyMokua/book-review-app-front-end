@@ -37,7 +37,8 @@ function Login({onLogin}) {
     }
   
   return (
-    <div className="parfent-container">
+    
+    <div className="parent-container">
       <div className="login-box">
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>

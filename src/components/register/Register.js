@@ -1,7 +1,7 @@
 
 import { React, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import './register.css'
+import './Register.css'
 
 function Register( { onLogin }){
     const [ username, setUsername ] = useState("");
@@ -32,7 +32,7 @@ function Register( { onLogin }){
         <div className='parent-container' >
           <div className='register-box'>
             <h2>Register</h2>
-            <form onSubmit={userRegister} >
+            <form onSubmit={handleSubmit} >
           <div className='user-box'>
             <label>username</label>
             <input type="text"
@@ -52,7 +52,7 @@ function Register( { onLogin }){
                         />
           </div>
           <div className='submit-box'>
-            <button className='submit-btn' onClick={userRegister} >Register</button>
+            <button className='submit-btn' onClick={handleSubmit} >Register</button>
           </div> 
                   <div hidden={errors.length <= 0 }>
                       {errors.map((err) => {
