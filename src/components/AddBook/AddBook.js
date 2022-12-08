@@ -12,7 +12,7 @@ function AddBook() {
 
   function handleSubmit(e){
     e.preventDefault();
-    const form = {title,author,Description}
+    // const form= {title,author,Description}
     fetch('/books',{
       method: 'POST',
       headers:{'Content-Type':'application/json'},
