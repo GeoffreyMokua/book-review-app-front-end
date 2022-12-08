@@ -1,4 +1,10 @@
 
+
+// import React from 'react'
+// import react, { useState } from 'react'
+// import login from '../login/login.css'
+       
+// import  { useState } from 'react'
 import React from 'react'
 // import { useState } from 'react'       
 import {useNavigate} from 'react-router-dom'
@@ -29,10 +35,10 @@ function Login({onLogin}) {
     //   }
     // })
     autoNavigate("/reviews")
-  }
+    }
   
   return (
-    <div className="parent-container">
+    <div className="parfent-container">
       <div className="login-box">
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
