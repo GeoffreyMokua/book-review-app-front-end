@@ -1,43 +1,38 @@
 
 import React from 'react'
-import react, { useState } from 'react'
-import login from '../login/login.css'
-       
-import React, { useState } from 'react'
+// import { useState } from 'react'       
 import {useNavigate} from 'react-router-dom'
 import './login.css'
 
 function Login({onLogin}) {
-  const navigate = useNavigate()
+  const autoNavigate = useNavigate()
   const [username, setUsername] = ("")
   const [password, setPassword] = ("")
-  const [errors, setErrors] = useState([]);
+  // const [error, setErrors] = useState(null);
 
   // perform side effect for user login
   const handleSubmit = e => {
     e.preventDefault();
-    fetch("/login", {
+    fetch("/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ username, password }),
-    }).then((r) => {
-      // setIsLoading(false);
-      if (r.ok) {
-        r.json().then((user) => onLogin(user));
-      } else {
-        r.json().then((err) => setErrors(err.errors));
-      }
-    });
+    })
+    //   .then((r) => {
+    //   // setIsLoading(false);
+    //   if (r.ok) {
+    //     r.json().then((user) => onLogin(user));
+    //   } else {
+    //     r.json().then((err) => setErrors(err.error));
+    //   }
+    // })
+    autoNavigate("/reviews")
   }
   
   return (
     <div className="parent-container">
-      <div className="image-background">
-        <img src="https://res.cloudinary.com/dnhtposui/image/upload/v1670398469/books_with_coffeemug_sgpbjx.jpg" alt="Background Image" />
-
-      </div>
       <div className="login-box">
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>

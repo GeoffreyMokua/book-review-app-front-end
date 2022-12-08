@@ -1,8 +1,4 @@
 import React from "react";
-// import BookReview from "../bookReview/BookCard";
-// import Home from "../home/Home";
-// import Login from "../login/Login";
-// import navbar from "../navbar";
 import { Link as NavLink } from "react-router-dom";
 
 function Navbar() {
@@ -29,7 +25,7 @@ function Navbar() {
               </li>
               <li class="nav-item">
                 <NavLink className="nav-link" to="/register">
-                  Register
+                  Sign up
                 </NavLink>
               </li>
               <li class="nav-item">

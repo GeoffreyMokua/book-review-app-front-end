@@ -2,38 +2,29 @@ import {React, useState} from 'react'
 import {useNavigate} from 'react-router-dom'
 import './AddBook.css'
 
-// export default function AddBook() {
-//   return (
-    <div className="parent-container">
-    <div className="image-background">
-      <img src="https://res.cloudinary.com/dnhtposui/image/upload/v1670398900/books_with_flowers_zy7jix.jpg" alt="Background Image" />
-    </div>
-    </div>
-//   )
-// }
-// import React, { useState } from "react";
-// import {useHistory} from 'react-router-dom'
-// import { useState } from 'react'
+
+
 function AddBook() {
   const [title, setTitle] = useState('');
-  const [image, setImage] = useState('');
+  const [author, setAuthor] = useState('');
   const [Description, setDescription] = useState('');
-  const navigate = useNavigate();
+  const autoNavigate = useNavigate();
+
   function handleSubmit(e){
     e.preventDefault();
-    const form = {title,image,Description}
-    fetch('/add_books',{
+    // const form= {title,author,Description}
+    fetch('/books',{
       method: 'POST',
       headers:{'Content-Type':'application/json'},
-      body: JSON.stringify(form)
+      body: JSON.stringify(FormData)
     })
     .then((res) => res.json())
     .then(()=>{
       setTitle('')
-      setImage('')
+      setAuthor('')
       setDescription('')
-      navigate('/')
     })
+    autoNavigate("/reviews")
   }
   return (
     <div className='addBook'>
@@ -48,8 +39,8 @@ function AddBook() {
           <input type="text" value={title} onChange={(e)=>setTitle(e.target.value)} required></input>
           <br />
           <br />
-          <label for="image-url">Image url</label> <br />
-          <input type="text" value={image}  onChange={(e)=>setImage(e.target.value)} required></input>
+          <label type="text" >Author</label> <br />
+          <input type="text" value={author}  onChange={(e)=>setAuthor(e.target.value)} required></input>
           <br />
           <br />
           <label for="book-description">Book-Description</label>
