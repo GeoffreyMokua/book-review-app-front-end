@@ -1,10 +1,9 @@
 import React from 'react'
-import './BookCard.css'
 
-function BookReview() {
+function BookCard() {
   return (
-    <div>BookReview</div>
+    <div>Book</div>
   )
 }
 
-export default BookReview
+export default BookCard

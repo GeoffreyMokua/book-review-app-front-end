@@ -1,29 +1,28 @@
-import { useState } from 'react'
-import {useNavigate} from 'react-router-dom'
+
+import { React, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import './Register.css'
 
-
-function Register({ onRegister }) {
-    const autoNavigate = useNavigate()
+function Register( { onRegister }){
     const [ username, setUsername ] = useState("");
     const [ password, setPassword ] = useState("");
     const [ errors, setErrors ] = useState([]);
 
-    function userRegister(e){
-        e.preventDefault()
-        fetch('/users',{
-            method : 'POST',
-            headers : { "Content-Type" : 'application/json' },
-            body : JSON.stringify({ username, password })
-        })
-        .then(r => {
-            if(r.ok){
-                r.json().then(user => onRegister(user))
-            } else {
-                r.json().then(e => {
-                    setErrors(e.errors)
-                    })
-            }
+    const handleSubmit = e => {
+        e.preventDefault();
+        fetch("/users", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ username, password }),
+        }).then((r) => {
+          // setIsLoading(false);
+          if (r.ok) {
+            r.json().then((user) => onLogin(user));
+          } else {
+            r.json().then((err) => setErrors(err.error));
+          }
         })
       autoNavigate("/reviews")
   }
@@ -32,7 +31,7 @@ function Register({ onRegister }) {
         <div className='parent-container' >
           <div className='register-box'>
             <h2>Register</h2>
-            <form onSubmit={userRegister} >
+            <form onSubmit={handleSubmit} >
           <div className='user-box'>
             <label>username</label>
             <input type="text"
@@ -52,7 +51,7 @@ function Register({ onRegister }) {
                         />
           </div>
           <div className='submit-box'>
-            <button className='submit-btn' onClick={userRegister} >Register</button>
+            <button className='submit-btn' onClick={handleSubmit} >Register</button>
           </div> 
                   <div hidden={errors.length <= 0 }>
                       {errors.map((err) => {
@@ -60,9 +59,11 @@ function Register({ onRegister }) {
                           })}
                   </div>
               </form>
-          </div>
-            
-    </div>
+          </div>      
+      </div>
     )
   }
+
   export default Register;
+
+
