@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./AddBook.css";
+
 
 function AddBook() {
   const [title, setTitle] = useState("");
@@ -24,34 +24,31 @@ function AddBook() {
     autoNavigate("/reviews");
   }
   return (
-    <div className="addBook">
-      <p id="form-p">
+    <div className="flex items-center mx-auto w-1/2 flex-col justify-center py-36">
+      <h2 className="text-center mb-5">
         This page gives you a platform where you can add a Book to our
         collection.
-      </p>
-        <form className="form-review" onSubmit={handleSubmit}>
-          <label for="novel-title">Book-Title</label>
-          <br />
+      </h2>
+      <form className="w-1/2 mx-auto flex flex-col justify-center " onSubmit={handleSubmit}>
+        <label for="novel-title" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">Book-Title</label>
           <input
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             required
-          ></input>
-          <br />
-          <br />
-          <label type="text">Author</label> <br />
+            className="block w-full min-w-0 flex-1  rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+          </input>
+          
+        <label className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">Author</label>
           <input
             type="text"
             value={author}
             onChange={(e) => setAuthor(e.target.value)}
             required
-          ></input>
-          <br />
-          <br />
-          <label for="book-description">Book-Description</label>
-          <br />
-          <br />
+          className="block w-full min-w-0 flex-1  rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+          </input>
+        <label for="book-description" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">Book-Description</label>
+        
           <textarea
             id="txt"
             rows="5"
@@ -59,12 +56,12 @@ function AddBook() {
             value={Description}
             onChange={(e) => setDescription(e.target.value)}
             required
-          >
+          className="block w-full min-w-0 flex-1  rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
             Enter description here...
           </textarea>{" "}
           <br />
           <br />
-          <button>Add book</button>
+        <button type='submit' className="flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 mt-5">Add book</button>
         </form>
       </div>
   );
