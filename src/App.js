@@ -19,7 +19,7 @@ function App() {
           }
         />
         <Route
-          path="/add_books"
+          path="/add-book"
           element={<AddBook />}
         />
         <Route

@@ -18,7 +18,7 @@ export default function Navbar() {
   const path = location.pathname;
  
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    <Disclosure as="nav" className="bg-gray-800 pt-4">
 
       {({ open }) => (
         <>

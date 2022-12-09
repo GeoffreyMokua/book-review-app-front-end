@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { StarIcon } from '@heroicons/react/20/solid';
 import { Book } from '../../images';
+import { useForm } from "react-hook-form";
 
 
 import { useLocation } from 'react-router-dom'
@@ -30,6 +31,25 @@ function classNames(...classes) {
 export default function BookDetail() {
     const location = useLocation()
     const { book } = location.state
+
+    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const onSubmit = data => {
+        // use fetch to post data once endpoint is available
+
+        // fetch("/:id/reviews", {
+        //     method: "POST",
+        //     headers: {
+        //         "Content-Type": "application/json",
+        //     },
+        //     body: JSON.stringify(data),
+        // })
+       
+
+
+        console.log(data)
+    };
+
+
     return (
         <div className="bg-white h-screen">
             <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
@@ -96,17 +116,39 @@ export default function BookDetail() {
                 {/* Product form */}
                 <div className="mt-10 lg:col-start-1 lg:row-start-2 lg:max-w-lg lg:self-start">
                     <section aria-labelledby="options-heading">
-
-
-                        <form>
-                            <div className="mt-10">
+                        <form  onSubmit={handleSubmit(onSubmit)}>
+                            <label>Ratings</label>
+                            <input
+                                required
+                                type="number"
+                                {...register('rating', {required: 'ratings is required'})}
+                                name="rating"
+                                id="ratingd"
+                                autoComplete="ratings"
+                                className="block w-full min-w-0 flex-1 rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                            />
+                            <div className="mt-1 sm:col-span-2 sm:mt-0">
+                                <label>Comment</label>
+                                <textarea
+                                    required
+                                    placehoder='Add comment'
+                                    id="about"
+                                    name="about"
+                                    rows={3}
+                                    className="block w-full max-w-lg rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                                    defaultValue={''}
+                                    {...register('comment', {required: 'Comment is required'})}
+                                />
+                                {/* <p className="mt-2 text-sm text-red-500">{errors.comment}</p> */}
+                            </div>
+                            
                                 <button
                                     type="submit"
-                                    className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
+                                    className=" mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
                                 >
                                     Add review
                                 </button>
-                            </div>
+                         
                         </form>
                     </section>
                 </div>
