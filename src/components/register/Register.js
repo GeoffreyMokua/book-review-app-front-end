@@ -12,7 +12,7 @@ function Register({ onRegister }) {
     const [ errors, setErrors ] = useState([]);
     function userRegister(e){
         e.preventDefault()
-        fetch('/register',{
+        fetch('/users',{
             method : 'POST',
             headers : { "Content-Type" : 'application/json' },
             body : JSON.stringify({ username, password })
