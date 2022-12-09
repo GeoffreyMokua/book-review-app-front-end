@@ -5,6 +5,7 @@ import BookReview from "./components/bookReview/BookCard";
 import Login from "./components/login/Login";
 import AddBook from "./components/AddBook/AddBook";
 import Register from "./components/register/Register";
+import BookDetail from "./components/bookDetail";
 
 function App() {
   return (
@@ -28,6 +29,10 @@ function App() {
          <Route
           path="/register"
           element={<Register />}
+        />
+        <Route
+          path="/book-detail"
+          element={<BookDetail />}
         />
         <Route path="/" element={<Home />} />
       </Routes>

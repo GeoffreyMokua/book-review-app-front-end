@@ -21,7 +21,7 @@ input{
     width: 30%;
 }
 
-button{
+/* button{
     font-family: 'Ubuntu', sans-serif;
     position: relative;
     top: 50%;
@@ -42,7 +42,7 @@ button{
     overflow: hidden;
     transition: all .35s;
   }
-  
+   */
 
 button:hover{
     background: #eaafc8;

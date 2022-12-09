@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
-// import { Link } from "react-router-dom";
-// import axios from "axios";
-import './BookCard.css';
+import { useEffect, useState } from "react";
+import { Book } from "../../images";
+import { useNavigate } from "react-router-dom";
 
-const BookList = () => {
+export default function BookList() {
+
+  const navigate = useNavigate()
   const [books, setBooks] = useState([]);
   useEffect(() => {
     fetch('/books')
@@ -15,93 +16,38 @@ const BookList = () => {
   }, [])
 
   return (
-    <div>
-      <h1>Book List</h1>
-      {books.map(book => (
-        <div>
-          <h4>{book.title}</h4>
+    <div className="bg-white h-screen">
+      <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+        <h2 className="text-xl font-bold text-gray-900">Book List</h2>
+        <div className="mt-8 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
+          {books.map((book) => (
+            <div key={book.id}>
+              <div className="relative">
+                <div className="relative h-72 w-full overflow-hidden rounded-lg">
+                  <img
+                    src={Book}
+                    alt={'Book placeholder'}
+                    className="h-full w-full object-cover object-center"
+                  />
+                </div>
+                <div className="relative mt-4">
+                  <h3 className="text-sm font-medium text-gray-900">{book.title}</h3>
+                  <p className="mt-1 text-sm text-gray-500">{book.description}</p>
+                  <p className="mt-1 text-sm text-gray-500">{book.author}</p>
+                  <span
+                    onClick={() => navigate("/book-detail", { state: { book } })}
+                    className="relative flex items-center justify-center rounded-md border border-transparent bg-gray-100 py-2 px-8 text-sm font-medium text-gray-900 hover:bg-gray-200 cursor-pointer"
+                  >
+                    View Details
+                  </span>
+                </div>
 
-          <h4>Author: {book.author}</h4>
-          <p>Description: {book.description}</p>
-          {book.reviews.map(review => (
-            <>
-              <p>Rating: {review.rating}</p>
-              <p>Review: {review.comment}</p>
-            </>
+              </div>
+            </div>
           ))}
         </div>
-      ))}
+      </div>
     </div>
-  );
-};
-
-// const Book = ({ book }) => (
-//   <div>
-//     <h2>
-//       <Link to={`/books/${book.id}`}>{book.title}</Link>
-//     </h2>
-//     <p>By {book.author}</p>
-//   </div>
-// );
-
-// const BookDetail = ({ match }) => {
-//   const [book, setBook] = useState(null);
-//   const [rating, setRating] = useState(0);
-//   const [comment, setComment] = useState("");
-//   const [isSubmitting, setIsSubmitting] = useState(false);
-
-//   useEffect(() => {
-      // axios
-//       .get(`/api/books/${match.params.id}`)
-//       .then(response => {
-//         setBook(response.data);
-//       })
-//       .catch(error => {
-//         console.error(error);
-//       });
-//   }, [match.params.id]); 
-  
-//   const handleRatingChange = event => {
-//     setRating(Number(event.target.value));
-//   };
-
-//   const handleCommentChange = event => {
-//     setComment(event.target.value);
-//   };
-
-//   const handleSubmit = event => {
-//     event.preventDefault();
-//     setIsSubmitting(true);
-//     axios
-//       .post(`/api/books/${match.params.id}/comments`, {
-//         rating,
-//         comment
-//       })
-//       .then(response => {
-//         setBook(response.data);
-//         setRating(0);
-//         setComment("");
-//         setIsSubmitting(false);
-//       })
-//       .catch(error => {
-//         console.error(error);
-//         setIsSubmitting(false);
-//       });
-//   };
-
-//   if (!book) {
-//     return null;
-//   }
-  
-//   return (
-//     <div>
-//       <h1>{book.title}</h1>
-//       <p>By {book.author}</p>
-//       <h2>Ratings and Comments</h2>
-//       <h3>Leave a Comment</h3>
-//       <form onSubmit={handleSubmit}>
-
-//       </form>
-//     </div>
- export default BookList;
+  )
+}
 
