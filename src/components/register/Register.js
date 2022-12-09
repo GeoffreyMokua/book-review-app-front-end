@@ -1,4 +1,7 @@
 
+import { React, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
+import './Register.css'
 
 function Register( { onRegister }){
     const [ username, setUsername ] = useState("");
@@ -24,43 +27,43 @@ function Register( { onRegister }){
       autoNavigate("/reviews")
   }
 
-
-    return (
-      <div className='parent-container' >
-        <div className='register-box'>
-          <h2>Register</h2>
-          <form onSubmit={userRegister} >
-            <div className='user-box'>
-              <label>username</label>
-              <input type="text"
-                value={username}
-                onChange={(e) => {
-                  setUsername(e.target.value)
-                }}
-              />
-            </div>
-            <div className='user-box'>
-              <label>password</label>
-              <input type="password"
-                value={password}
-                onChange={(e) => {
-                  setPassword(e.target.value)
-                }}
-              />
-            </div>
-            <div className='submit-box'>
-              <button className='submit-btn' onClick={userRegister} >Register</button>
-            </div>
-            <div hidden={errors.length <= 0}>
-              {errors.map((err) => {
-                return <h4 key={errors.indexOf(err)}>{err}</h4>
-              })}
-            </div>
-          </form>
-        </div>
-            
+    return(
+        <div className='parent-container' >
+          <div className='register-box'>
+            <h2>Register</h2>
+            <form onSubmit={handleSubmit} >
+          <div className='user-box'>
+            <label>username</label>
+            <input type="text"
+                    value={username}
+                    onChange={(e) => {
+                        setUsername(e.target.value)
+                        }}
+                        />
+          </div>
+          <div className='user-box'>
+            <label>password</label>
+            <input type="password"
+                    value={password}
+                    onChange={(e) => {
+                        setPassword(e.target.value)
+                        }}
+                        />
+          </div>
+          <div className='submit-box'>
+            <button className='submit-btn' onClick={handleSubmit} >Register</button>
+          </div> 
+                  <div hidden={errors.length <= 0 }>
+                      {errors.map((err) => {
+                          return <h4 key={errors.indexOf(err)}>{err}</h4>
+                          })}
+                  </div>
+              </form>
+          </div>      
       </div>
     )
   }
 
   export default Register;
+
+
