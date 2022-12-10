@@ -6,7 +6,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed; 
     font-family: "Open Sans", sans-serif;
-    color: #333333;
+    color: #090101;
   }
   .box-form {
     margin: 0 auto;
@@ -36,17 +36,17 @@ body {
     
 }
 
-.user-box{
+/* .user-box{
     display: flex;
     margin-top: 20px;
     flex-direction: column;
     font-size: 20px;
-}
+} */
 
-.user-box > label{
+/* .user-box > label{
     margin-bottom: 5px;
     
-}
+} */
 /* .submit-box {
     display: flex;
     margin-top: 20px;
@@ -59,7 +59,7 @@ button{
     font-family: 'Ubuntu', sans-serif;
     position: relative;
     top: 50%;
-    left: 50%;
+    left: 10%;
     transform: translate(-50%, -50%);
     
     width: 170px;
@@ -75,8 +75,11 @@ button{
     cursor: pointer;
     overflow: hidden;
     transition: all .35s;
+    margin-top: 10px;
+    margin: 0 auto 0.0;
+   
   }
-  
+
 
 button:hover{
     background: #eaafc8;

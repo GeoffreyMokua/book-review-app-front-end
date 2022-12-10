@@ -1,5 +1,5 @@
  .addBook {
-    background-image: url("https://res.cloudinary.com/dnhtposui/image/upload/v1670398900/books_with_flowers_zy7jix.jpg");
+    background-image: url("https://res.cloudinary.com/dnhtposui/image/upload/v1670398469/books_with_coffeemug_sgpbjx.jpg");
     background-size: cover;
     height: 100vh;
     /* display: flex; */
@@ -15,6 +15,7 @@
 }
 #txt{
     width: 30%;
+    font-size: bold;
 }
 input{
     color: black;
@@ -54,3 +55,5 @@ button:hover{
     visibility: visible;
     transition: all .35s;
   }
+
+  

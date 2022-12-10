@@ -7,6 +7,7 @@ function Register( { onRegister }){
     const [ username, setUsername ] = useState("");
     const [ password, setPassword ] = useState("");
     const [ errors, setErrors ] = useState([]);
+    const navigate = useNavigate
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -17,14 +18,14 @@ function Register( { onRegister }){
           },
           body: JSON.stringify({ username, password }),
         }).then((r) => {
-          // setIsLoading(false);
+           const [isLoading, setIsLoading] = (false);
           if (r.ok) {
             r.json().then((user) => onLogin(user));
           } else {
             r.json().then((err) => setErrors(err.error));
           }
         })
-      autoNavigate("/reviews")
+      navigate("/reviews")
   }
 
     return(
