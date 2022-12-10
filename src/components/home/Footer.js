@@ -2,6 +2,7 @@ import React from "react";
 import { FaPhoneSquareAlt, FaRegEnvelope, FaInstagram, FaFacebookSquare, FaTwitterSquare } from "react-icons/fa";
 import "./Home"
 
+
 function Footer () {
     return (
         
